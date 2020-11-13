@@ -1,0 +1,67 @@
+"request": {
+	"type": "IntentRequest",
+	"requestId": "amzn1.echo-api.request.d88337c9-b3c5-4409-b711-6640c69ac7de",
+	"locale": "es-ES",
+	"timestamp": "2020-11-12T18:24:53Z",
+	"intent": {
+		"name": "Viajes",
+		"confirmationStatus": "NONE",
+		"slots": {
+			"fecha": {
+				"name": "fecha",
+				"value": "martes",
+				"confirmationStatus": "NONE",
+				"source": "USER"
+			},
+			"origen": {
+				"name": "origen",
+				"value": "francia",
+				"resolutions": {
+					"resolutionsPerAuthority": [
+						{
+							"authority": "amzn1.er-authority.echo-sdk.amzn1.ask.skill.e17f3b8b-5b74-40fe-bd51-a3989f6c65ed.paises",
+							"status": {
+								"code": "ER_SUCCESS_MATCH"
+							},
+							"values": [
+								{
+									"value": {
+										"name": "Francia",
+										"id": "FR"
+									}
+								}
+							]
+						}
+					]
+				},
+				"confirmationStatus": "NONE",
+				"source": "USER"
+			},
+			"destino": {
+				"name": "destino",
+				"value": "italia",
+				"resolutions": {
+					"resolutionsPerAuthority": [
+						{
+							"authority": "amzn1.er-authority.echo-sdk.amzn1.ask.skill.e17f3b8b-5b74-40fe-bd51-a3989f6c65ed.paises",
+							"status": {
+								"code": "ER_SUCCESS_MATCH"
+							},
+							"values": [
+								{
+									"value": {
+										"name": "Italia",
+										"id": "IT"
+									}
+								}
+							]
+						}
+					]
+				},
+				"confirmationStatus": "NONE",
+				"source": "USER"
+			}
+		}
+	},
+	"dialogState": "COMPLETED"
+}

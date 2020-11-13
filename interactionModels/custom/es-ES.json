@@ -1,0 +1,145 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "agencia de viajes",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "Viajes",
+          "slots": [
+            {
+              "name": "origen",
+              "type": "paises",
+              "samples": [
+                "Saldré desde {origen}",
+                "Partiré desde {origen}",
+                "Comenzaré en {origen}",
+                "Partiremos desde {origen}",
+                "Comenzaremos en {origen}",
+                "Saldremos desde {origen}",
+                "Desde  {origen}",
+                "{origen}"
+              ]
+            },
+            {
+              "name": "destino",
+              "type": "paises"
+            },
+            {
+              "name": "fecha",
+              "type": "AMAZON.DayOfWeek"
+            }
+          ],
+          "samples": [
+            "qué rutas hay desde {origen} el {fecha}",
+            "qué rutas hay entre {origen} y {destino}",
+            "rutas para {origen}",
+            "las rutas para {fecha}",
+            "Dame las rutas para {fecha}",
+            "Dame las rutas para {origen}",
+            "Dame las rutas para el {fecha} entre {origen} e {destino}",
+            "Dame las rutas para el {fecha} entre {origen} y {destino}",
+            "Dame las rutas entre {origen} e {destino} para el {fecha}",
+            "Dame las rutas entre {origen} y {destino} para el {fecha}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "IT",
+              "name": {
+                "value": "Italia"
+              }
+            },
+            {
+              "id": "FR",
+              "name": {
+                "value": "Francia"
+              }
+            }
+          ],
+          "name": "paises"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "Viajes",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "origen",
+              "type": "paises",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.247267232764.465657585157"
+              }
+            },
+            {
+              "name": "destino",
+              "type": "paises",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "fecha",
+              "type": "AMAZON.DayOfWeek",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.247267232764.465657585157",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Cuál es el país de partida?"
+          },
+          {
+            "type": "PlainText",
+            "value": "¿Desde qué país desea comenzar el viaje?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "5"
+}
